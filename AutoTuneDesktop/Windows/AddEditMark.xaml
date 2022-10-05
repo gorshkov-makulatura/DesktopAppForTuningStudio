@@ -1,0 +1,22 @@
+﻿<Window x:Class="AutoTuneDesktop.Windows.AddEditMark"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:AutoTuneDesktop.Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Редактор марок" Height="150" Width="200">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" Width="150">
+            <TextBox Text="{Binding bindingMark.Name}" x:Name="nameBox"
+                         ui:ControlHelper.PlaceholderText="Название:"/>
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal" >
+                <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" HorizontalAlignment="Left" Click="exitClick">Выйти</Button>
+                <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Background="#dd444d" Foreground="White" Click="saveMark" Margin="5,0,0,0" HorizontalAlignment="Right">Сохранить</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

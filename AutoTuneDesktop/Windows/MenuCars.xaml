@@ -1,0 +1,72 @@
+﻿<Window x:Class="AutoTuneDesktop.Windows.MenuCars"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoTuneDesktop.Windows"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        mc:Ignorable="d"
+        Title="Меню автомобилей" Height="450" Width="800">
+    <Grid>
+        <ui:ScrollViewerEx VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+            <StackPanel>
+                <TabControl>
+                    <TabItem FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Header="Машины">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40px"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Margin="0,5,0,0" Grid.Row="0">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Margin="5,0,0,0" Click="close">Выйти</Button>
+                                    <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Background="#dd444d" Foreground="White" x:Name="addUser" Click="addCarClick" Margin="5,0,0,0">Добавить</Button>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <DataGrid Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" x:Name="carsGrid">
+                                <DataGrid.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Изенить" Click="editClick"></MenuItem>
+                                    </ContextMenu>
+                                </DataGrid.ContextMenu>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Марка" Binding="{Binding Path=Marks.Name}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Номера" Binding="{Binding Path=Number}"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </TabItem>
+
+                    <TabItem FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Header="Марки">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40px"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Margin="0,5,0,0" Grid.Row="0">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Margin="5,0,0,0" Click="close">Выйти</Button>
+                                    <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Background="#dd444d" Foreground="White" x:Name="addMark" Click="addMarkClick" Margin="5,0,0,0">Добавить</Button>
+                                </StackPanel>
+                            </StackPanel>
+                            <DataGrid Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" x:Name="marksGrid">
+                                <DataGrid.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Изменить" x:Name="editMark" Click="editMarkClick"></MenuItem>
+                                    </ContextMenu>
+                                </DataGrid.ContextMenu>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Название" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </TabItem>
+                    
+                </TabControl>
+            </StackPanel>
+        </ui:ScrollViewerEx>
+    </Grid>
+</Window>

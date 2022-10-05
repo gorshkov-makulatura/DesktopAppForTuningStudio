@@ -1,0 +1,43 @@
+﻿<Window x:Class="AutoTuneDesktop.Windows.ReportsMaterials"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoTuneDesktop.Windows" xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="ReportsMaterials" Height="720" Width="1280">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40px"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <StackPanel Margin="5,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" >
+                <TextBlock FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" VerticalAlignment="Center">От:</TextBlock>
+                <DatePicker x:Name="fromPicker" Margin="5,0,0,0"></DatePicker>
+            </StackPanel>
+            <StackPanel Margin="5,0,0,0" Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="0">
+                <TextBlock FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" VerticalAlignment="Center">До:</TextBlock>
+                <DatePicker x:Name="toPicker" Margin="5,0,0,0"></DatePicker>
+            </StackPanel>
+            <Button x:Name="close" Click="closeClick" FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" VerticalAlignment="Center" Margin="5,0,0,0">Выйти</Button>
+            <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg"  Margin="5,0,0,0" Background="#dd444d" Foreground="White" x:Name="apply" Click="applyClick">Сформировать</Button>
+            <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg"  Margin="5,0,0,0" Background="#dd444d" Foreground="White" x:Name="createDoc" Click="createDocClick">Отчёт</Button>
+        </StackPanel>
+
+        <DVC:Chart  FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Grid.Row="1" x:Name="myChart">
+            <DVC:Chart.Series>
+                <DVC:BarSeries Title="Материал" ItemsSource="{Binding list}" IndependentValueBinding="{Binding Key}" DependentValueBinding="{Binding Value}">
+                </DVC:BarSeries>
+            </DVC:Chart.Series>
+        </DVC:Chart>
+        <DataGrid FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" IsReadOnly="true" AlternatingRowBackground="#d4c0be" AutoGenerateColumns="False" Grid.Row="2" ItemsSource="{Binding list}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Key}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Кол-во продаж" Binding="{Binding Value}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

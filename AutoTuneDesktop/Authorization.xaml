@@ -1,0 +1,79 @@
+﻿<Window x:Class="AutoTuneDesktop.Authorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg"
+        
+        Title="Авторизация" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        TextOptions.TextFormattingMode="Display"
+        ui:WindowHelper.UseModernWindowStyle="True">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="265*"></ColumnDefinition>
+            <ColumnDefinition Width="71*"></ColumnDefinition>
+            <ColumnDefinition Width="458*"/>
+        </Grid.ColumnDefinitions>
+        <ui:SimpleStackPanel  Spacing="12" 
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" 
+                             Width="200"
+                             Grid.Column="2" Margin="92.9,120,164.6,120">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Image RenderOptions.BitmapScalingMode="Fant" Height="50" Source="Resources/AutoTune.png"></Image>
+                <TextBlock  VerticalAlignment="Center" FontSize="30" HorizontalAlignment="Center">AutoTune</TextBlock>
+            </StackPanel>
+            <StackPanel>
+                <DockPanel>
+                    <ui:FontIcon FontFamily="Segoe MDL2 Assets" 
+                             Glyph="&#xE77B;"/>
+                    <TextBox x:Name="emailBox" Margin="5,0,0,0" 
+                         ui:ControlHelper.PlaceholderText="Почта:"/>
+                </DockPanel>
+                <DockPanel Margin="0,10,0,0">
+                    <ui:FontIcon FontFamily="Segoe MDL2 Assets" 
+                             Glyph="&#xE72E;"/>
+                    <PasswordBox x:Name="passwordBox" Margin="5,0,0,0" 
+                             ui:ControlHelper.PlaceholderText="Пароль:"/>
+                </DockPanel>
+
+            </StackPanel>
+
+            <StackPanel x:Name="captchaGeneral" Visibility="Collapsed" >
+                <TextBox FontSize="16"
+                     x:Name="captchaBlock"
+                     HorizontalContentAlignment="Center"
+                     Margin="25, 0, 0, 0"
+                     IsEnabled="False"/>
+
+                <TextBox x:Name="captchaBox" ui:ControlHelper.PlaceholderText="Код с картинки:" 
+                     Margin="25, 0, 0, 0"/>
+            </StackPanel>
+
+            <Button TextOptions.TextFormattingMode="Ideal"  FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" x:Name="loginButton" Click="loginButtonClick" Foreground="White" 
+                    FontSize="16"
+                    HorizontalAlignment="Center"  
+                    Background="#dd444d" 
+                    Margin="25,0,0,0"
+                    Width="175"
+                    Content="Войти"></Button>
+        </ui:SimpleStackPanel>
+        <Rectangle Grid.ColumnSpan="2" Margin="0,0,71.1,0">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Offset="0.0" Color="#DC6495"></GradientStop>
+                    <GradientStop Offset="1.0" Color="#c94154"></GradientStop>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <ui:SimpleStackPanel  Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <TextBlock TextOptions.TextFormattingMode="Ideal"  HorizontalAlignment="Center" Foreground="White" FontSize="24">Добро пожаловать!</TextBlock>
+            <StackPanel Height="60">
+                <TextBlock FontFamily="Sans" FontSize="14" TextOptions.TextFormattingMode="Ideal" Foreground="White" TextAlignment="Center" TextWrapping="Wrap" >Если вам нужна какая-либо помощь, пожалуйста обратитесь к администратору</TextBlock>
+            </StackPanel>
+        </ui:SimpleStackPanel>
+    </Grid>
+</Window>

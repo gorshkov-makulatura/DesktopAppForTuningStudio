@@ -1,0 +1,39 @@
+﻿<Window x:Class="AutoTuneDesktop.Windows.AddEditMaterial"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ui="http://schemas.modernwpf.com/2019" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoTuneDesktop.Windows"
+        mc:Ignorable="d"
+        Title="AddEditMaterial" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Width="150" VerticalAlignment="Center">
+            <Border BorderBrush="Black" BorderThickness="2">
+                <Image x:Name="profilePicture" Source="{Binding bindingMaterial.Photo}"   Height="150" VerticalAlignment="Top" ></Image>
+            </Border>
+            <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Background="#dd444d" Foreground="White" x:Name="changePhoto" Click="changePhotoClick" HorizontalAlignment="Center" Margin="0,10,0,0">Изменить фото</Button>
+            <TextBox Text="{Binding bindingMaterial.Name}" Margin="0,10,0,0" x:Name="nameBox"
+                         ui:ControlHelper.PlaceholderText="Название:"/>
+            <ComboBox Margin="0,10,0,00" x:Name="materialsTypeBox" Width="150"  SelectedValue="{Binding bindingMaterial.MaterialsType}" DisplayMemberPath="Name"></ComboBox>
+        </StackPanel>
+
+        <StackPanel Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+            <TextBox Text="{Binding bindingMaterial.Quantity}" Margin="0,10,0,0" x:Name="quantityBox"
+                         ui:ControlHelper.PlaceholderText="Количество:"/>
+            <TextBox  ui:ControlHelper.PlaceholderText="Цена для продажи:" Text="{Binding bindingMaterial.RetailPrice}" Margin="0,10,0,0" x:Name="retailPriceBox"></TextBox>
+            <CheckBox Content="Статус" x:Name="checkBoxStatus" IsChecked="{Binding bindingMaterial.StockStatus}"></CheckBox>
+
+            <StackPanel Margin="0,10,0,0" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" x:Name="exit" Click="exitClick" Margin="5,0,0,0">Выйти</Button>
+                <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Background="#dd444d" Foreground="White" x:Name="save" Click="saveClick" Margin="5,0,0,0">Сохранить</Button>
+            </StackPanel>
+        </StackPanel>
+        
+        
+    </Grid>
+</Window>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="AutoTuneDesktop.Windows.MenuPays"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoTuneDesktop.Windows"
+        mc:Ignorable="d"
+        Title="MenuPays" Height="450" Width="800">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" Width="200">
+            <ComboBox DisplayMemberPath="Name" Width="200" x:Name="methodsBox"></ComboBox>
+            <ComboBox DisplayMemberPath="Name" Margin="0,10,0,0" Width="200" x:Name="statusesBox"></ComboBox>
+            <StackPanel HorizontalAlignment="Center" Margin="0,10,0,0" Orientation="Horizontal" >
+                <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" HorizontalAlignment="Left" Click="Close">Выйти</Button>
+                <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Background="#dd444d" Foreground="White" Click="savePay" Margin="5,0,0,0" HorizontalAlignment="Right">Сохранить</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

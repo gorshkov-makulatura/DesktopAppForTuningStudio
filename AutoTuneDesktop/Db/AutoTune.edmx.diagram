@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d62831d5017c4bdca63cd230578381ef" Name="Diagram1">
+        <EntityTypeShape EntityType="AutoTuneModel.Cars" Width="1.5" PointX="5.25" PointY="3.375" />
+        <EntityTypeShape EntityType="AutoTuneModel.Genders" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AutoTuneModel.Marks" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="AutoTuneModel.Materials" Width="1.5" PointX="7.5" PointY="15.375" />
+        <EntityTypeShape EntityType="AutoTuneModel.MaterialsToSupplies" Width="1.5" PointX="14.25" PointY="11.625" />
+        <EntityTypeShape EntityType="AutoTuneModel.MaterialsType" Width="1.5" PointX="5.25" PointY="15.875" />
+        <EntityTypeShape EntityType="AutoTuneModel.Orders" Width="1.5" PointX="7.5" PointY="2.25" />
+        <EntityTypeShape EntityType="AutoTuneModel.OrderStatuses" Width="1.5" PointX="5.25" PointY="6.875" />
+        <EntityTypeShape EntityType="AutoTuneModel.PaymentMethods" Width="1.5" PointX="3" PointY="11.25" />
+        <EntityTypeShape EntityType="AutoTuneModel.Payments" Width="1.5" PointX="5.25" PointY="12" />
+        <EntityTypeShape EntityType="AutoTuneModel.PaymentStatuses" Width="1.5" PointX="3" PointY="13.625" />
+        <EntityTypeShape EntityType="AutoTuneModel.Roles" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="AutoTuneModel.ServicesToOrders" Width="1.5" PointX="9.75" PointY="3.25" />
+        <EntityTypeShape EntityType="AutoTuneModel.Suppliers" Width="1.5" PointX="9.75" PointY="7.25" />
+        <EntityTypeShape EntityType="AutoTuneModel.Supplies" Width="1.5" PointX="12" PointY="7.25" />
+        <EntityTypeShape EntityType="AutoTuneModel.SupplyStatuses" Width="1.5" PointX="9.75" PointY="11.75" />
+        <EntityTypeShape EntityType="AutoTuneModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="2" />
+        <EntityTypeShape EntityType="AutoTuneModel.TypeOfServices" Width="1.5" PointX="7.5" PointY="8.5" />
+        <EntityTypeShape EntityType="AutoTuneModel.Users" Width="1.5" PointX="3" PointY="2.25" />
+        <AssociationConnector Association="AutoTuneModel.FK_Cars_Marks" />
+        <AssociationConnector Association="AutoTuneModel.FK_Cars_Users" />
+        <AssociationConnector Association="AutoTuneModel.FK_Orders_Cars" />
+        <AssociationConnector Association="AutoTuneModel.FK_Users_Genders" />
+        <AssociationConnector Association="AutoTuneModel.FK_Materials_MaterialsType" />
+        <AssociationConnector Association="AutoTuneModel.FK_MaterialsToSupplies_Materials" />
+        <AssociationConnector Association="AutoTuneModel.FK_ServicesToOrders_Materials" />
+        <AssociationConnector Association="AutoTuneModel.FK_MaterialsToSupplies_Supplies" />
+        <AssociationConnector Association="AutoTuneModel.FK_TypeOfServices_MaterialsType" />
+        <AssociationConnector Association="AutoTuneModel.FK_Orders_OrderStatuses" />
+        <AssociationConnector Association="AutoTuneModel.FK_Orders_Payments" />
+        <AssociationConnector Association="AutoTuneModel.FK_Orders_Users" />
+        <AssociationConnector Association="AutoTuneModel.FK_Orders_Users1" />
+        <AssociationConnector Association="AutoTuneModel.FK_Orders_Users2" />
+        <AssociationConnector Association="AutoTuneModel.FK_ServicesToOrders_Orders" />
+        <AssociationConnector Association="AutoTuneModel.FK_Payments_PaymentMethods" />
+        <AssociationConnector Association="AutoTuneModel.FK_Payments_PaymentStatuses" />
+        <AssociationConnector Association="AutoTuneModel.FK_Users_Roles" />
+        <AssociationConnector Association="AutoTuneModel.FK_ServicesToOrders_TypeOfServices" />
+        <AssociationConnector Association="AutoTuneModel.FK_Supplies_Suppliers" />
+        <AssociationConnector Association="AutoTuneModel.FK_Supplies_SupplyStatuses" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

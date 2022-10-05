@@ -1,0 +1,24 @@
+﻿<Window x:Class="AutoTuneDesktop.Windows.AddEditCar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg"
+        WindowStartupLocation="CenterScreen"
+        xmlns:local="clr-namespace:AutoTuneDesktop.Windows"
+        mc:Ignorable="d"
+        Title="Редактор авто" Height="200" Width="200">
+    <Grid >
+        <StackPanel VerticalAlignment="Center" Width="150">
+            <ComboBox x:Name="marksComboBox"  Width="150" SelectedValue="{Binding bindingCar.Marks}" DisplayMemberPath="Name"></ComboBox>
+            <xctk:MaskedTextBox Style="{StaticResource {x:Type TextBox}}" Mask="L000LL" Text="{Binding bindingCar.Number}" Margin="0,10,0,0" x:Name="numberBox"
+                         ui:ControlHelper.PlaceholderText="Номера:"/>
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal" >
+                <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" HorizontalAlignment="Left" Click="exitClick">Выйти</Button>
+                <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Background="#dd444d" Foreground="White" Click="saveService" Margin="5,0,0,0" HorizontalAlignment="Right">Сохранить</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

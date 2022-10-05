@@ -1,0 +1,49 @@
+﻿<Window x:Class="AutoTuneDesktop.Windows.AddEditUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoTuneDesktop.Windows" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Редактор пользователя" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Width="150" VerticalAlignment="Center">
+                <Border BorderBrush="Black" BorderThickness="2">
+                    <Image x:Name="profilePicture" Source="{Binding bindingUser.Photo}"   Height="150" VerticalAlignment="Top" >
+                    </Image>
+                </Border>
+                <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Background="#dd444d" Foreground="White" x:Name="changePhoto" Click="changePhotoClick" HorizontalAlignment="Center" Margin="0,10,0,0">Изменить фото</Button>
+                <TextBox Text="{Binding bindingUser.SecondName}" Margin="0,10,0,0" x:Name="secondNameBox"
+                         ui:ControlHelper.PlaceholderText="Фамилия:"/>
+                <TextBox Text="{Binding bindingUser.FirstName}" Margin="0,10,0,0" x:Name="firstNameBox"
+                         ui:ControlHelper.PlaceholderText="Имя:"/>
+                <TextBox Text="{Binding bindingUser.LastName}" Margin="0,10,0,0" x:Name="lastNameBox"
+                         ui:ControlHelper.PlaceholderText="Отчество:"/>
+            </StackPanel>
+            <StackPanel Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">
+                <xctk:MaskedTextBox Style="{StaticResource {x:Type TextBox}}" Mask="+0(000)000-00-00" Text="{Binding bindingUser.PhoneNumber}" Margin="0,10,0,0" x:Name="phoneNameBox"
+                         ui:ControlHelper.PlaceholderText="Телефон:"/>
+                <TextBox  Text="{Binding bindingUser.Email}" Margin="0,10,0,0" x:Name="emailNameBox"
+                         ui:ControlHelper.PlaceholderText="Почта:"/>
+                <TextBox Text="{Binding bindingUser.Password}" Margin="0,10,0,0" x:Name="passwordNameBox"
+                         ui:ControlHelper.PlaceholderText="Пароль:"/>
+                <ComboBox SelectedValue="{Binding bindingUser.Genders}" DisplayMemberPath="Name"  Margin="0,10,0,0" Width="200" x:Name="genderBox"></ComboBox>
+                <ComboBox SelectedValue="{Binding bindingUser.Roles}" DisplayMemberPath="Name"  Margin="0,10,0,0" Width="200" x:Name="roleBox"></ComboBox>
+                <DatePicker SelectedDate="{Binding bindingUser.BirthDate}" Margin="0,10,0,0" x:Name="dateBox" Width="200"></DatePicker>
+                <CheckBox IsChecked="{Binding bindingUser.IsActive}" Content="Активен" Margin="0,10,0,0" Width="200" x:Name="activeBox"></CheckBox>
+                <StackPanel Margin="0,10,0,0" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" x:Name="edit" Click="editClick" Margin="5,0,0,0">Выйти</Button>
+                    <Button FontFamily="/AutoTuneDesktop;component/Resources/#Proxima Nova Rg" Background="#dd444d" Foreground="White" x:Name="save" Click="saveClick" Margin="5,0,0,0">Сохранить</Button>
+
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
